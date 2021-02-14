@@ -1,4 +1,4 @@
-PREFIX?=/usr/local
+DESTDIR?=/usr/local
 GLIBCFLAGS=-D_XOPEN_SOURCE=500 -D__STRICT_ANSI__
 CPPFLAGS+=$(GLIBCFLAGS)
 CFLAGS?=-pedantic -ansi -Wall -g -O0
@@ -55,7 +55,7 @@ clean:
 	rm -f *.o ts
 
 install: ts
-	$(INSTALL) -d $(PREFIX)/bin
-	$(INSTALL) ts $(PREFIX)/bin
-	$(INSTALL) -d $(PREFIX)/share/man/man1
-	$(INSTALL) -m 644 ts.1 $(PREFIX)/share/man/man1
+	$(INSTALL) -d $(DESTDIR)/bin
+	$(INSTALL) ts $(DESTDIR)/bin
+	$(INSTALL) -d $(DESTDIR)/share/man/man1
+	$(INSTALL) -m 644 ts.1 $(DESTDIR)/share/man/man1
